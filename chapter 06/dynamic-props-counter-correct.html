@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+    <script>
+        //const counter={counter:0}
+
+        const Component=
+        {
+            template: '<div><button v-on:click="counter+=1">{{counter}}</button></div>',
+            data() {
+                return { 
+                    counter: 0
+                }
+            }
+        }
+
+        new Vue({
+            el:'#app',
+            components: 
+            {
+                'my-component': Component
+            },
+            data()
+            {
+                return { 
+                    message: ''
+                }
+            }
+        }
+        );
+    </script>
+</body>
+</html>
